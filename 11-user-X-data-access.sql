@@ -2,5 +2,6 @@
 set role data_user;
 set session "request.jwt.claim.user" = 'user_X';
 
-select * from t1;
-select * from t2;
+select current_setting('request.jwt.claim.user');
+select * from spending_habits;
+select * from personal_details;
