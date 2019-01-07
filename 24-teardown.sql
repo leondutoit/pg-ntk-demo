@@ -3,10 +3,10 @@ set role admin_user;
 
 -- delete groups
 
-select group_remove_memebers('group1', null, null, true);
-select group_remove_memebers('group2', null, null, true);
-select table_group_access_revoke('t1', 'group1', 'select');
-select table_group_access_revoke('t2', 'group2', 'select');
+select group_remove_members('group1', null, null, true);
+select group_remove_members('group2', null, null, true);
+select table_group_access_revoke('spending_habits', 'group1', 'select');
+select table_group_access_revoke('personal_details', 'group2', 'select');
 select group_delete('group1');
 select group_delete('group2');
 
@@ -49,8 +49,8 @@ select user_delete('Z', 'data_user');
 set role authenticator;
 set role admin_user;
 
-drop table t1;
-drop table t2;
+drop table spending_habits;
+drop table personal_details;
 
 -- clear audit data, maybe in another script
 -- need to be superuser for this

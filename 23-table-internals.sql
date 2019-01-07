@@ -1,0 +1,2 @@
+
+\d+ spending_habits
