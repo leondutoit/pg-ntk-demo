@@ -1,11 +1,11 @@
 #!/bin/bash
 
-num_steps=$( ls | grep sql | wc -l )
+num_steps=$( ls ./src | wc -l )
 
 psql -d tsd_backend_utv_auth -c 'drop table if exists personal_details; drop table if exists spending_habits; drop role group1; drop role group2;'
 
 for i in `seq 1 $num_steps`; do
-    step=$( ls $i-* )
+    step=$( ls ./src/$i-* )
     clear
     echo "Press any key to execute: $step"
     read
