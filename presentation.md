@@ -73,7 +73,7 @@ A hypothetical sequence of events:
 1. admin creates tables
 2. data owners and data users register themselves, data is collected
 3. admin creates groups, adds members, adds table grants
-4. dats is analysed
+4. data is analysed
 5. users manage their own data
 6. admins get audit insights
 7. developers create applications using composing these features
@@ -97,7 +97,7 @@ A hypothetical sequence of events:
 
 # Data analysis
 
-# Data management by owners
+# Data ownership
 
 * right to access
 * data portability
@@ -109,7 +109,23 @@ A hypothetical sequence of events:
 
 # Right to be forgotten
 
-# Audit
+# Audit insights
+
+* data access
+* access control changes
+* user initiated group removals
+* user initiated data deletions
+* data updates
+
+# Audit: data access
+
+# Audit: access control changes
+
+# Audit: user initiated group removals
+
+# Audit: user initiated data deletions
+
+# Audit: data updates
 
 # Application development
 
