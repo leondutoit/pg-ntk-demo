@@ -1,4 +1,4 @@
-% Mandatory Access Control in PostgresQL - giving users ownership of their data
+% Mandatory Access Control in PostgreSQL - giving users ownership of their data
 % Leon du Toit
 % 2019-01-15
 
@@ -45,6 +45,14 @@
 
 # Use case
 
+Key terms:
+
+* data owner: provides data about themselves
+* data user:  analyses data about others
+* admin: creates and implements access control policies
+
+# Use case
+
 Assume the following setup:
 
 ```txt
@@ -57,10 +65,9 @@ data users: X, Y, Z
 
 Now suppose we need to set up the following access control rules in our DB:
 
-```txt
-data users X, and Y should only have access to data in tables t1 and only data from owners A, B, C, D
-data user Z should have access to all data - i.e. tables t1, t2
-```
+* data users X, and Y should only have access to data in tables t1 and only data from owners A, B, C, D
+* data user Z should have access to all data - i.e. tables t1, t2
+
 
 # Use case
 
@@ -75,10 +82,39 @@ group2
     - select table access grants: (t1, t2)
 ```
 
-# pg-need-to-know via REST
+# Use case
+
+A hypothetical sequence of events:
+
+1. admin creates tables
+2. data owners and data users register themselves, data is collected
+3. admin creates groups, adds members, adds table grants
+4. dats is analysed
+5. users manage their own data
+6. admins get audit insights
+7. developers create applications using composing these features
+
+# Table creation
+
+# Group setup
+
+# Group management
+
+# Data analysis
+
+# Data management by owners
+
+* right to access
+* right to be forgotten
+* data portability
+* consent-based data usage
+
+# Audit
+
+# Application development
 
 ```txt
 
-HTTP client -> webapp -> REST server -> (pg-need-to-know, PostgresQL)
+client -> webapp -> REST -> (pg-need-to-know, PostgresQL)
 
 ```
