@@ -5,13 +5,12 @@
 # Outline
 
 * why take data ownership seriously?
+* why Mandatory Access Control?
 * a brief introduction to the `pg-need-to-know` module
-* `pg-need-to-know` via REST
 * a use case to demostrate features:
     * For users: ownership, insight and consent-based usage
     * For administrators: fine-grained access control, audit information
     * For developers: a rich REST API, with a built-in authorization model
-* a deeper look at the web architecture
 
 # Why take data ownership seriously?
 
@@ -23,8 +22,14 @@
     * consent-based data usage
     * increased demand for audit information
 * To counter surveilance capitalism
-    * "you (and your data) are the product"
+    * you (and your data) are the product
     * building applications to fight this trend
+
+# What Mandatory Access Control?
+
+* _enforcible_ policies, in constrast to Discretionary Access Control
+* enables consent-based data access
+* supports granular access needs
 
 # pg-need-to-know
 
@@ -37,6 +42,38 @@
     * used to create functions
     * ~1000 sloc, another ~1500 for tests
 * designed to be used via a REST API
+
+# Use case
+
+Assume the following setup:
+
+```txt
+data owners: A, B, C, D, E, F
+tables: t1, t2, containing data from all data owners
+data users: X, Y, Z
+```
+
+# Use case
+
+Now suppose we need to set up the following access control rules in our DB:
+
+```txt
+data users X, and Y should only have access to data in tables t1 and only data from owners A, B, C, D
+data user Z should have access to all data - i.e. tables t1, t2
+```
+
+# Use case
+
+Using pg-need-to-know, we implement this with the following groups, and table grants:
+
+```txt
+group1
+    - members: ((X, Y), (A, B, C, D))
+    - select table access grant: (t1)
+group2
+    - members: ((Z), (A, B, C, D, E, F))
+    - select table access grants: (t1, t2)
+```
 
 # pg-need-to-know via REST
 
