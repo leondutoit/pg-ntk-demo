@@ -87,7 +87,7 @@ A hypothetical sequence of events:
 
 # Group setup, table grants
 
-* can link consent(s) to groups
+* can link consent(s) to groups via group metadata
 * group1
     * members: ((X, Y), (A, B, C, D))
     * select table access grant: (spending_habits)
@@ -100,8 +100,14 @@ A hypothetical sequence of events:
 # Data management by owners
 
 * right to access
-* right to be forgotten
 * data portability
+* right to be forgotten
+
+# Right to access
+
+# Data portability
+
+# Right to be forgotten
 
 # Audit
 
