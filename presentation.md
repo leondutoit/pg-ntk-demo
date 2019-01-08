@@ -41,6 +41,7 @@
     * procedural language, extending SQL with control structures
     * used to create functions
     * ~1000 sloc, another ~1500 for tests
+* uses Row-Level Security policies to implement MAC
 * designed to be used via a REST API
 
 # Use case
@@ -97,6 +98,12 @@ A hypothetical sequence of events:
 
 # Data analysis
 
+User X's data access
+
+# Data analysis
+
+User Z's data access
+
 # Data ownership
 
 * right to access
@@ -105,9 +112,15 @@ A hypothetical sequence of events:
 
 # Right to access
 
+Owner A's data access
+
 # Data portability
 
+* owner A can simple download their data
+
 # Right to be forgotten
+
+Owner B deletes their data
 
 # Audit insights
 
@@ -129,8 +142,11 @@ A hypothetical sequence of events:
 
 # Application development
 
+Architecture:
 ```txt
 
 client -> webapp -> REST -> (pg-need-to-know, PostgresQL)
 
 ```
+* developers can focus on business logic
+* authorization taken care of
