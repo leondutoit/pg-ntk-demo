@@ -55,32 +55,16 @@ Key terms:
 
 Assume the following setup:
 
-```txt
-data owners: A, B, C, D, E, F
-tables: t1, t2, containing data from all data owners
-data users: X, Y, Z
-```
+* data owners: A, B, C, D, E, F
+* data users: X, Y, Z
+* tables: spending_habits, personal_details, containing data from all data owners
 
 # Use case
 
 Now suppose we need to set up the following access control rules in our DB:
 
-* data users X, and Y should only have access to data in tables t1 and only data from owners A, B, C, D
-* data user Z should have access to all data - i.e. tables t1, t2
-
-
-# Use case
-
-Using pg-need-to-know, we implement this with the following groups, and table grants:
-
-```txt
-group1
-    - members: ((X, Y), (A, B, C, D))
-    - select table access grant: (t1)
-group2
-    - members: ((Z), (A, B, C, D, E, F))
-    - select table access grants: (t1, t2)
-```
+* data users X, and Y should only have access to data in tables spending_habits and only data from owners A, B, C, D
+* data user Z should have access to all data - i.e. tables spending_habits, personal_details
 
 # Use case
 
@@ -96,9 +80,20 @@ A hypothetical sequence of events:
 
 # Table creation
 
-# Group setup
+# User registration
 
-# Group management
+* can require consent before user registration
+* data collection not possible without registration
+
+# Group setup, table grants
+
+* can link consent(s) to groups
+* group1
+    * members: ((X, Y), (A, B, C, D))
+    * select table access grant: (spending_habits)
+* group2
+    * members: ((Z), (A, B, C, D, E, F))
+    * select table access grants: (spending_habits, personal_details)
 
 # Data analysis
 
@@ -107,7 +102,6 @@ A hypothetical sequence of events:
 * right to access
 * right to be forgotten
 * data portability
-* consent-based data usage
 
 # Audit
 
