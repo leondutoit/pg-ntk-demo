@@ -81,6 +81,8 @@ A hypothetical sequence of events:
 
 # Table creation
 
+![Creating a new table](media/table-creation.png)
+
 # User registration
 
 * can require consent before user registration
@@ -98,7 +100,7 @@ A hypothetical sequence of events:
 
 # Data analysis
 
-User X's data access
+![User X's data access](media/user-x-data-access.png)
 
 # Data analysis
 
