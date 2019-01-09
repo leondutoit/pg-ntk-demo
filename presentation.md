@@ -22,9 +22,7 @@
     * data portability
     * consent-based data usage
     * increased demand for audit information
-* To counter surveilance capitalism
-    * you (and your data) are the product
-    * building applications to fight this trend
+* Respecting people
 
 # What Mandatory Access Control?
 
@@ -123,7 +121,7 @@ A hypothetical sequence of events:
 
 # Right to be forgotten
 
-Owner B deletes their data
+![Owner B deletes their data](media/owner-b-deletes-data.png)
 
 # Audit insights
 
@@ -135,13 +133,23 @@ Owner B deletes their data
 
 # Audit: data access
 
+![Data access audit logs](media/event-log-data-access.png)
+
 # Audit: access control changes
+
+![Access control audit logs](media/event-log-access-control.png)
 
 # Audit: user initiated group removals
 
+![User group removals audit logs](media/event-log-user-group-removals.png)
+
 # Audit: user initiated data deletions
 
+![User data deletion audit logs](media/event-log-user-data-deletions.png)
+
 # Audit: data updates
+
+![Data update audit logs](media/event-log-data-updates.png)
 
 # Application development
 
@@ -153,3 +161,7 @@ client -> webapp -> REST -> (pg-need-to-know, PostgresQL)
 ```
 * developers can focus on business logic
 * authorization taken care of
+
+# Implementation details
+
+* example table definition
