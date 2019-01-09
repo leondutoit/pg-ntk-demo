@@ -24,7 +24,7 @@
     * increased demand for audit information
 * Respecting people
 
-# What Mandatory Access Control?
+# Why Mandatory Access Control?
 
 * _enforcible_ policies, in constrast to Discretionary Access Control
 * enables consent-based data access
@@ -32,7 +32,7 @@
 
 # pg-need-to-know
 
-* PostgresQL "module" - really just a set of tables, views, and functions
+* PostgreSQL "module" - really just a set of tables, views, and functions
 * implements Mandatory Access Control
 * more limited approach than [SEPostgreSQL](https://wiki.postgresql.org/wiki/SEPostgreSQL_SELinux_Overview)
 * source: https://github.com/leondutoit/pg-need-to-know
@@ -49,7 +49,7 @@ Key terms:
 
 * data owner: provides data about themselves
 * data user:  analyses data about others
-* admin: creates and implements access control policies
+* admin: creates access control policies
 
 # Use case
 
@@ -63,7 +63,7 @@ Assume the following setup:
 
 Now suppose we need to set up the following access control rules in our DB:
 
-* data users X, and Y should only have access to data in tables spending_habits and only data from owners A, B, C, D
+* data users X, and Y should only have access to data in table spending_habits and only data from owners A, B, C, D
 * data user Z should have access to all data - i.e. tables spending_habits, personal_details
 
 # Use case
@@ -167,8 +167,8 @@ webapp -> REST -> (pg-need-to-know, PostgresQL)
 
 * `pg-need-to-know` designed to be used with [postgrest](http://postgrest.org/en/v5.2/)
 * open source project written in Haskell
-* provides a REST API for any PostgresQL DB
-* https://github.com/leondutoit/pg-need-to-know/blob/master/api/http-api.mds
+* provides a REST API for any PostgreSQL DB
+* https://github.com/leondutoit/pg-need-to-know/blob/master/api/http-api.md
 * `pg-need-to-know` requires a custom compilation of this server due to audit logging
 * available here: https://github.com/leondutoit/postgrest-need-to-know
 
