@@ -156,12 +156,33 @@ A hypothetical sequence of events:
 Architecture:
 ```txt
 
-client -> webapp -> REST -> (pg-need-to-know, PostgresQL)
+webapp -> REST -> (pg-need-to-know, PostgresQL)
 
 ```
 * developers can focus on business logic
 * authorization taken care of
+* authentication is left to the webapp implementor
+
+# postgrest
+
+* `pg-need-to-know` designed to be used with [postgrest](http://postgrest.org/en/v5.2/)
+* open source project written in Haskell
+* provides a REST API for any PostgresQL DB
+* https://github.com/leondutoit/pg-need-to-know/blob/master/api/http-api.mds
+* `pg-need-to-know` requires a custom compilation of this server due to audit logging
+* available here: https://github.com/leondutoit/postgrest-need-to-know
+
+# Authentication requirements
+
+* webapp must provide an access token at request time
+* a JWT with the following claims:
+    * `exp: expiry time`
+    * `role: <data_owner, data_user, admin_user>`
+    * `user: user name`
+* `pg-need-to-know` provides a `/token` endpoint for access token generation
+* but developers can implement their own
+* refernce client for HTTP API: https://github.com/leondutoit/py-need-to-know
 
 # Implementation details
 
-* example table definition
+![Example table definition](media/example-table-definition.png)
