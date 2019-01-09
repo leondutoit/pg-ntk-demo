@@ -186,3 +186,9 @@ webapp -> REST -> (pg-need-to-know, PostgresQL)
 # Implementation details
 
 ![Example table definition](media/example-table-definition.png)
+
+# More info
+
+* watch a demo recording: https://asciinema.org/a/c3XIyrfnoLixofqiSbx8p0l21
+* read the docs: https://github.com/leondutoit/pg-need-to-know/tree/master/docs
+
