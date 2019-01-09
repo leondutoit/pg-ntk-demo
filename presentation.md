@@ -191,4 +191,4 @@ webapp -> REST -> (pg-need-to-know, PostgresQL)
 
 * watch a demo recording: https://asciinema.org/a/c3XIyrfnoLixofqiSbx8p0l21
 * read the docs: https://github.com/leondutoit/pg-need-to-know/tree/master/docs
-
+* this presentation, and materials: https://github.com/leondutoit/pg-ntk-demo
