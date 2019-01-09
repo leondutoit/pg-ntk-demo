@@ -11,6 +11,7 @@
     * For users: ownership, insight and consent-based usage
     * For administrators: fine-grained access control, audit information
     * For developers: a rich REST API, with a built-in authorization model
+* optionally: a look at some implementation details
 
 # Why take data ownership seriously?
 
@@ -104,7 +105,7 @@ A hypothetical sequence of events:
 
 # Data analysis
 
-User Z's data access
+![User Z's data access](media/user-z-data-access.png)
 
 # Data ownership
 
@@ -114,11 +115,11 @@ User Z's data access
 
 # Right to access
 
-Owner A's data access
+![Owner A's data access](media/owner-a-data-access.png)
 
 # Data portability
 
-* owner A can simple download their data
+* owner A can simply download their data
 
 # Right to be forgotten
 
