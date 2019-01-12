@@ -2,6 +2,13 @@
 % Leon du Toit
 % 2019-01-15
 
+---
+header-includes:
+  - \hypersetup{colorlinks=false,
+            allbordercolors={0 0 0},
+            pdfborderstyle={/S/U/W 1}}
+---
+
 # Outline
 
 * why take data ownership seriously?
@@ -42,6 +49,25 @@
     * ~1000 sloc, another ~1500 for tests
 * uses Row-Level Security policies to implement MAC
 * designed to be used via a REST API
+
+# Row-Level Security
+
+* [Row-Level Security](https://www.postgresql.org/docs/current/static/ddl-rowsecurity.html) introduced in PostgreSQL 9.5
+* policy expression evaluated during SQL query execution, for each row
+* can use row values as input to functions or expressions specified in the policy
+* if true then row returned, if false then not
+
+# Security policies
+
+[CREATE POLICY](https://www.postgresql.org/docs/11/sql-createpolicy.html):
+```txt
+CREATE POLICY name ON table_name
+[ AS { PERMISSIVE | RESTRICTIVE } ]
+[ FOR { ALL | SELECT | INSERT | UPDATE | DELETE } ]
+[ TO { role_name | PUBLIC | CURRENT_USER | SESSION_USER } ]
+[ USING ( using_expression ) ]
+[ WITH CHECK ( check_expression ) ]
+```
 
 # Use case
 
