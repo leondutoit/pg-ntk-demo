@@ -94,7 +94,7 @@ Now suppose we need to set up the following access control rules in our DB:
 
 # Use case
 
-A hypothetical sequence of events:
+A hypothetical sequence of events using `pg-need-to-know`:
 
 1. admin creates tables
 2. data owners and data users register themselves, data is collected
@@ -102,7 +102,7 @@ A hypothetical sequence of events:
 4. data is analysed
 5. users manage their own data
 6. admins get audit insights
-7. developers create applications using composing these features
+7. developers create applications using these features
 
 # Table creation
 
